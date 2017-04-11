@@ -1,0 +1,97 @@
+body{
+background-color: #f1d7b3;
+color: #000000;
+}
+div {
+margin: 0 auto;
+font-family: Corbel, Calibri;
+font-size:18px;
+}
+a{
+color: #303030;
+}
+a:hover{
+color: #000066;
+text-decoration:underline;
+}
+a:visited{
+color: #505050;
+}
+h1,h2,h3,h4,h5,h6{
+text-align:center;
+}
+.wrapper{
+width: 1200px;
+padding-top: 30px; /*odsuniecie od gornej krawedzi strony*/
+}
+.top{
+width:1000px;
+height:150px;
+}
+.logo{
+width:450px;
+height:150px;
+background: url("logo.png") no-repeat;
+float:left;
+}
+.menu{
+float:right;
+width:500px;
+padding-top:7px;
+padding-bottom:7px;
+}
+.menu div{
+border:2px solid black;
+text-align:center;
+font-size:17px;
+height:22px;
+margin-left:30px;
+margin-bottom:8px;
+}
+.active {
+background-color:#E9BF87;
+}
+.non_act{
+background-color:#EFCFA5;
+}
+.main{
+width:1000px;
+margin-top:25px;
+clear:both;
+}
+.desc{
+padding-top:50px;
+float:left;
+width:50%;
+}
+.simulation{
+float: right;
+width: 500px;
+height: 500px;
+}
+.gallery{
+width:1200px;
+margin-top:25px;
+clear:both;
+}
+.techdata{
+width:60%;
+background-color:white;
+font-family:"courier new",courier,sans;
+color:black;
+font-size:80%;
+}
+.center{
+text-align:center;
+}
+#add label{
+margin-right:15px;
+}
+.foot{
+padding-top: 50px;
+clear:both;
+}
+.foot p{
+margin-top:50px;
+font-size:12px;
+}
