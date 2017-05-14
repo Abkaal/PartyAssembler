@@ -1,16 +1,18 @@
 <?php
-require("startup.php");
+require_once("startup.php");
 
 $page=request_var('page',0);
-$u_id=request_var('id',0);
+$e_id=request_var('id',0);
 
-if(($u_id)){
-	$data=$dbc->grab_data('dbs_events',$u_id);
+if(($e_id)){
+	$data=$dbc->grab_data('dbs_events',$e_id);
 	if($data){
 		print '<div class="center">';
 		print "<h3>".$data['event_name']."</h3>";
-		print "<hr/><a href=\"enroll.php?id=$u_id\">Enroll for this event</a>";
-		print "<br/><a href=\"events.php\">".'Go back'."</a>";
+		print "<a href=\"enroll.php?id=$e_id\">Enroll for this event</a><br/>";
+		print "<a href=\"cat_event.php?ev=$e_id\">Assign this event to a category</a><br/>";
+		print "<a href=\"del_cat_event.php?ev=$e_id\">Remove category assignment from this event</a><br/>";
+		print "<hr/><br/><a href=\"events.php\">".'Go back'."</a>";
 		print "</div>";
 	}
 	else print "Something has gone wrong...";

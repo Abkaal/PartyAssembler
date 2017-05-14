@@ -1,7 +1,7 @@
 <?php
 
-require("startup.php");
-include_once("Validator.php");
+require_once("startup.php");
+include_once("includes/Validator.php");
 
 print '<div style="margin: 0 auto;">';
 if(isset($_POST['submit'])){

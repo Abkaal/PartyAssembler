@@ -14,15 +14,15 @@
 		<div class="logo"><!--no content, only picture--></div>
 		<div class="menu">
 			<div class="non_act"><a href="index.php" title="Main Page">Main Page</a></div>
-			<div class="non_act"><a href="search.php" title="Search">Search</a></div>
-			<div class="active"><a href="manage.php" title="ACP">Admin Control Panel</a></div>
+			<div class="active"><a href="search.php" title="Search">Search</a></div>
+			<div class="non_act"><a href="manage.php" title="ACP">Admin Control Panel</a></div>
 			<div class="non_act"><a href="contact.php" title="Contact">Contact</a></div>
 		</div>
 	</div>
 	<div class="gallery center">
-		What do you want to manage?<br/><br/>
-			<a href="man_events.php">Events</a><br/>
-			<a href="man_cats.php">Categories</a><br/>
+		<?php
+		require_once("search_users_backend.php");
+		?>
 	</div>
 	<div class="foot center">Choose site theme:
 		<form id="switchform">

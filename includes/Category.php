@@ -9,18 +9,11 @@ class Category{
 	// Constructor.
 	// params:
 	// $id_in - identifier given by a user
-	// $dbc_in - pointer to a PDO object
+	// $dbc_in - database handler given from higher layer
 	public function __construct($id_in=0,$dbc_in=null){
 		//global $dbc;
 		$this->id=$id_in;
 		$this->dbc=$dbc_in;
-	}
-	
-	// Setter.
-	// params:
-	// $dbc_in - pointer to a PDO object
-	public function setDB($dbc_in=null){
-		if($dbc_in) $this->dbc=$dbc_in;
 	}
 	
 	// Static method. It adds a new category to the db.

@@ -1,5 +1,5 @@
 <?php
-require("startup.php");
+require_once("startup.php");
 
 $e_id=intval(request_var('id',0));
 $u_id=intval(request_var('uid',0));
@@ -10,7 +10,7 @@ if(($e_id)){
 		$fields='event_id,user_id';
 		$values="$e_id,$u_id";
 		$x=$dbc->insert_data($table_name,$fields,$values);*/
-		if(!class_exists('Event')) include("Event.php");
+		if(!class_exists('Event')) include("includes/Event.php");
 		$e=new Event($e_id,$dbc);
 		$x=$e->get_enrolled($u_id);
 		if($x) print '<h4>You have enrolled for the event successfully!</h4>';
