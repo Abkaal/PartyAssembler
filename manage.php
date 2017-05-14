@@ -1,11 +1,11 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>Party Assembler</title>
+	<title>City Transport Management System</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<link rel="alternate stylesheet" type="text/css" media="screen" title="light-theme" href="style2.css" />
 	<link rel="alternate stylesheet" type="text/css" media="screen" title="dark-theme" href="style3.css" />
-	<meta name="Description" content="Party Assembler" />
+	<meta name="Description" content="City Transport Management System" />
 	<script src="styleswitch.js" type="text/javascript"></script>
 </head>
 <body>
@@ -22,7 +22,6 @@
 	<div class="gallery center">
 		What do you want to manage?<br/><br/>
 			<a href="man_events.php">Events</a><br/>
-			<a href="man_cats.php">Categories</a><br/>
 	</div>
 	<div class="foot center">Choose site theme:
 		<form id="switchform">

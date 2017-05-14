@@ -1,7 +1,7 @@
 <?php
 
-require_once("startup.php");
-include_once("includes/Validator.php");
+require("startup.php");
+include_once("Validator.php");
 
 print '<div style="margin: 0 auto;">';
 if(isset($_POST['submit'])){
@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
 	}
 	if($x) print '<h4>New event created successfuly!.</h4>'; 
 	else print '<h4>Something has gone wrong... please check your input.</h4>';
-	print '<a href="add_event.php">Go to the previous page</a>';
+	print '<a href="register.php">Go to the previous page</a>';
 }
 else{
 	$data=$dbc->grab_data('dbs_users',0,array(),'user_id,user_name');
