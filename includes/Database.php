@@ -30,11 +30,13 @@ class Database{
 	// THIS FUNCTION SUPPORTS NEITHER JOINS NOR NON-EQUALITY CONDITIONS.
 	// params:
 	// $table_name - name of the db table
-	// $id - the identfier(s) of row(s) to be selected
+	// $id - the identfier(s) of row(s) to be selected (single number or array of numers)
 	// $id_names - array of names of fields identficating uniquely a single row in the db, used in non-standard cases such as assignments tables
 	// $to_select - string divided with commas containing of names of fields to be selected
 	// $rethrow - boolean indicating if PDOException should be rethrown when it's caught in this function
 	// $fetchall - this boolean should be set to false if and only if we want to select only one row
+	// bug:
+	// no possibility of ordering the data found;
 	public function grab_data($table_name,$id=0,$id_names=array(),$to_select='',$rethrow=false,$fetchall=true){
 		$field_id=substr($table_name,4,-1);
 		$field_id.='_id';
@@ -46,12 +48,8 @@ class Database{
 			if(count($id_names)==$len){
 				$y=true;
 				while($id){
-					//$x=(gettype($id[0])=='string');
 					$type=gettype($id[0]);
 					$ss.=(($y)?' WHERE ':' AND ').$id_names[0];
-					//$ss.=($x)?' LIKE "%':'=';
-					//$ss.=$id[0];
-					//$ss.=($x)?'%"':'';
 					switch($type){
 						case 'NULL': $ss.=' IS NULL'; break;
 						case 'string': $ss.=' LIKE "%'; $ss.=$id[0]; $ss.='%"'; break;
@@ -66,8 +64,7 @@ class Database{
 			$query.=$ss; // if we are here, no error occured, so $ss is not empty;
 		}
 		elseif($id) $query.=' WHERE '.$field_id.'='.$id;
-		//$query.=((stripos($table_name,'agns')===false)&&(stripos($table_name,'timetable')===false))?" ORDER BY $field_id;":';'; // workaround, in stable it can be another parameter;
-		//print $query;
+		//print $query;	
 		try{
 			$sql=$this->db->prepare($query);
 			$sql->execute();
@@ -91,7 +88,7 @@ class Database{
 		//echo $query;
 		try{
 			$sql=$this->db->prepare($query);
-			$sql->execute();
+			$x=$sql->execute();
 		} catch(PDOException $e){
 			echo $e;
 			$x=false;
@@ -142,7 +139,7 @@ class Database{
 			$query.=$where; // $where contains WHERE clause and is empty as long as $id is undefined;
 			try{
 				$sql=$this->db->prepare($query);
-				$sql->execute();
+				$x=$sql->execute();
 			} catch(PDOException $e){
 				//echo $query;
 				echo $e;
@@ -176,7 +173,7 @@ class Database{
 		$query='DELETE FROM '.$table_name.$ss.';';
 		try{
 			$sql=$this->db->prepare($query);
-			$sql->execute();
+			$x=$sql->execute();
 		} catch(PDOException $e){
 			$x=false;
 		}

@@ -1,6 +1,6 @@
 <?php
 
-include_once("Validator.php");
+include_once("includes/Validator.php");
 
 class Event{
 	
@@ -17,7 +17,7 @@ class Event{
 	// $id - identifier obtained from the db
 	public function __construct($id_in=0,$dbc_in=null){
 		// TODO
-		if(!class_exists('Database')) include('Database.php');
+		if(!class_exists('Database')) include('includes/Database.php');
 		if($id_in>0) $this->id=$id_in;
 		else $this->id=0;
 		$this->dbc=$dbc_in;

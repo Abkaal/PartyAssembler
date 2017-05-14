@@ -20,9 +20,11 @@
 		</div>
 	</div>
 	<div class="gallery center">
-		What do you want to manage?<br/><br/>
-			<a href="man_events.php">Events</a><br/>
-			<a href="man_cats.php">Categories</a><br/>
+		What do you want to do?<br/><br/>
+			<a href="list_cat.php">List categories</a><br/>
+			<a href="add_cat.php">Add category</a><br/>
+			<a href="edit_cat.php">Edit category</a><br/>
+			<a href="del_cat.php">Delete category</a><br/>
 	</div>
 	<div class="foot center">Choose site theme:
 		<form id="switchform">
