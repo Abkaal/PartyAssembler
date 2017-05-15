@@ -26,6 +26,10 @@ class Event{
 		$this->owner=null;
 	}
 	
+	public function setDB($dbc_in=null){
+		if($dbc_in) $this->dbc=$dbc_in;
+	}
+	
 	// Add new user to the db.
 	// params:
 	// $name - user name
@@ -82,6 +86,7 @@ class Event{
 		else $x=false;
 		return $x;
 	}
+
 }
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-include_once("includes/Validator.php");
+include_once("Validator.php");
 
 class User{
 	
@@ -11,16 +11,32 @@ class User{
 	private $level;
 	private $table_name;
 	
-	global $dbc;
-	
 	// Constructor, will be needed when logging in will be done;
 	// params:
 	// $id - user id
 	// $all - bool indicating if we construct an object from an existing user id
-	public function __construct($id=0, $all=true){
+	public function __construct($id_in=0, $all=true){
 		// if($all) grab data and save in fields;
-		if(is_int($id) && $id>0){} // TODO
+		if(is_int($id) && $id>0){
+			$this->id=$id_in;
+		} // TODO
+		if(!all){
+			$this->name=null;
+			$this->ip=null;
+			$this->email=null;
+			$this->level=null;
+		}
 		$this->table_name='dbs_users';
+	}
+	
+	// Getter.
+	public function getID(){
+        return $this->id;
+	}
+	
+	// Getter.
+	public function getName(){
+		return $this->name;
 	}
 	
 	// Add new user to the db.
