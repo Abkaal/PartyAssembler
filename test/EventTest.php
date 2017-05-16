@@ -20,14 +20,14 @@ class CategoryTest extends TestCase{
 	public function testEnrollPositive(){
 		$this->dbc->method('insert_data')->willReturn(true); // successful insert;
 		$this->ev->setDB($this->dbc);
-		$x=$this->ev->edit('test');
+		$x=$this->ev->get_enrolled(13);
 		$this->assertEquals($x,true); // row count neglected;
 	}
 	
 	public function testEnrollNegative(){
 		$this->dbc->method('insert_data')->willReturn(false);
 		$this->ev->setDB($this->dbc);
-		$x=$this->ev->edit('test');
+		$x=$this->ev->get_enrolled(13);
 		$this->assertEquals($x,false);
 	}
 	
@@ -46,14 +46,14 @@ class CategoryTest extends TestCase{
 	}
 	
 	public function testDelCatPositive(){
-		$this->dbc->method('remove_data')->willReturn(true);
+		$this->dbc->method('update_data')->willReturn(true);
 		$this->ev->setDB($this->dbc);
 		$x=$this->ev->del_cat();
 		$this->assertEquals($x,true);
 	}
 	
 	public function testDelCatNegative(){
-		$this->dbc->method('remove_data')->willReturn(false);
+		$this->dbc->method('update_data')->willReturn(false);
 		$this->ev->setDB($this->dbc);
 		$x=$this->ev->del_cat();
 		$this->assertEquals($x,false);
