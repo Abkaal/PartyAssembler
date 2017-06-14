@@ -163,7 +163,7 @@ class Database{
 			$ss.=' WHERE '.$field[0].'='.$value[0];
 			array_shift($value);
 			array_shift($field);
-			while($id){
+			while($field){
 				$ss.=' AND '.$field[0].'='.$value[0];
 				array_shift($value);
 				array_shift($field);

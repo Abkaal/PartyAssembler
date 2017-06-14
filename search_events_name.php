@@ -20,11 +20,9 @@
 		</div>
 	</div>
 	<div class="gallery center">
-		How do you want to search for events?<br/><br/>
-			<a href="search_events_name.php">By names</a><br/>
-			<a href="search_events_cat.php">By categories</a><br/>
-			<a href="search_events_org.php">By organizers</a><br/>
-			<a href="search_events_mix.php">All</a><br/>
+		<?php
+		require_once("search_events_name_backend.php");
+		?>
 	</div>
 	<div class="foot center">Choose site theme:
 		<form id="switchform">

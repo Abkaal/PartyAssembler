@@ -24,7 +24,7 @@ class Validator{
 		else return false;
 	}
 	
-	// Check if date given by user is valid and build date string to be inserted to the db
+	// Check if date given by user is valid
 	// params:
 	// $day, $month, $year - date given by a user
 	public static function validate_date($day, $month, $year){

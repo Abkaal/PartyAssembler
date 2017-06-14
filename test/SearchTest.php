@@ -37,7 +37,28 @@ class SearchTest extends TestCase{
 		$x=$this->se->event_by_cat(0);
 		$this->assertCount(0,$x);
 	}
+	
+	public function testEventMixPositive(){
+		$this->dbc->method('grab_data')->willReturn(array('testkey'=>'testvalue')); // not-empty array - something found;
+		$this->se->setDB($this->dbc);
+		$x=$this->se->event_mix(1);
+		$this->assertCount(1,$x);
+	}
+	
+	public function testEventMixNegative(){
+		$this->dbc->method('grab_data')->willReturn(false);
+		$this->se->setDB($this->dbc);
+		$x=$this->se->event_mix(null);
+		$this->assertEquals($x,false);
+	}
 
+	public function testEventMixNotFound(){
+		$this->dbc->method('grab_data')->willReturn(array()); // empty array - nothing found;
+		$this->se->setDB($this->dbc);
+		$x=$this->se->event_mix(0);
+		$this->assertCount(0,$x);
+	}
+	
 }
 
 ?>

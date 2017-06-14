@@ -1,6 +1,6 @@
 <?php
 
-include_once("Validator.php");
+include_once("includes/Validator.php");
 
 class User{
 	

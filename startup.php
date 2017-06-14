@@ -98,7 +98,7 @@ function request_var($var_name, $default, $cookie = false){
 	return $var;
 }
 
-require_once("Database.php");
+require_once("includes/Database.php");
 
 $dbc=new Database();
 

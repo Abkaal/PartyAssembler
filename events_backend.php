@@ -19,7 +19,7 @@ if(($e_id)){
 } 
 else{
 	$num=$dbc->counter('dbs_events');
-	$data=$dbc->grab_data('dbs_events',0,array(),'event_id,event_name'); // maybe replace it later with a dedicated static method;
+	$data=$dbc->grab_data('dbs_events',0,array(),'event_id,event_name');
 	if($data && $num){
 		print "<h2>Events:</h2><br/><div>";
 		print "<table style=\"margin: 0 auto;\"><tbody>";
